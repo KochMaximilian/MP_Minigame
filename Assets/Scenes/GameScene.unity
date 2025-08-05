@@ -225,7 +225,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 20.889446
+  field of view: 30.000002
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -596,7 +596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
-  PivotOffset: {x: 0, y: 0, z: 0}
+  PivotOffset: {x: 0.2, y: 0.2, z: 2}
   AmplitudeGain: 0.4
   FrequencyGain: 0.3
   m_NoiseOffsets: {x: 0, y: 0, z: 0}
@@ -643,7 +643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrackerSettings:
     BindingMode: 4
-    PositionDamping: {x: 1, y: 1, z: 1}
+    PositionDamping: {x: 2, y: 2, z: 2}
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
@@ -662,7 +662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Width: 2
   Damping: 1
-  FovRange: {x: 20.889446, y: 77.88945}
+  FovRange: {x: 30, y: 120}
 --- !u!1001 &1249909125
 PrefabInstance:
   m_ObjectHideFlags: 0

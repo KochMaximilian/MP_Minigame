@@ -1,2 +1,1 @@
-# Mario Party Minigame Project
-> For THU/King Mentorhsip Program
+# Mini Game Project for Self Study 

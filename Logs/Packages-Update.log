@@ -87,3 +87,12 @@ The following packages were added:
   com.unity.modules.xr@1.0.0
   com.unity.modules.accessibility@1.0.0
   com.unity.multiplayer.center@1.0.0
+
+=== Tue Aug  5 21:01:46 2025
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.inputsystem from version 1.11.2 to 1.13.0
+  com.unity.test-framework from version 1.4.5 to 1.4.6
