@@ -22,6 +22,6 @@ public class SelectedCounterVisual : MonoBehaviour
     }
 
     private void Show() { visualGameObject.SetActive(true); Debug.Log("Counter Showing"); }
-    private void Hide() { visualGameObject.SetActive(false); Debug.Log("Counter Hiden"); }
+    private void Hide() { visualGameObject.SetActive(false); Debug.Log("Counter Hidden"); } 
 
 }

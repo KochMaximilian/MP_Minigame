@@ -172,6 +172,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2485384886783898653, guid: 36203396461ab23409f24ddfc8a3fc9e, type: 3}
+      propertyPath: tomatoPrefab
+      value: 
+      objectReference: {fileID: 6710893850066331361, guid: b82588e46526b514f92651462d7efa60, type: 3}
+    - target: {fileID: 2485384886783898653, guid: 36203396461ab23409f24ddfc8a3fc9e, type: 3}
+      propertyPath: kitchenObjectSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 71bd2a0e39df23a43904ee9057d2e775, type: 2}
     - target: {fileID: 4461753902943146390, guid: 36203396461ab23409f24ddfc8a3fc9e, type: 3}
       propertyPath: m_Name
       value: ClearCounter (1)
@@ -1000,6 +1008,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1486793588 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2485384886783898653, guid: 36203396461ab23409f24ddfc8a3fc9e, type: 3}
+  m_PrefabInstance: {fileID: 71588915}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daaf63d3ff498344ca2b47d3e12c3caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1848322823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,6 +1418,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2485384886783898653, guid: 36203396461ab23409f24ddfc8a3fc9e, type: 3}
+      propertyPath: testing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485384886783898653, guid: 36203396461ab23409f24ddfc8a3fc9e, type: 3}
+      propertyPath: tomatoPrefab
+      value: 
+      objectReference: {fileID: 6710893850066331361, guid: c23c7e10d57586c4594d85e076ff3667, type: 3}
+    - target: {fileID: 2485384886783898653, guid: 36203396461ab23409f24ddfc8a3fc9e, type: 3}
+      propertyPath: secondClearCounter
+      value: 
+      objectReference: {fileID: 1486793588}
     - target: {fileID: 4461753902943146390, guid: 36203396461ab23409f24ddfc8a3fc9e, type: 3}
       propertyPath: m_Name
       value: ClearCounter
