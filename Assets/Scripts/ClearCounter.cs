@@ -1,8 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ClearCounter : MonoBehaviour
-{
+public class ClearCounter : MonoBehaviour, IKitchenObjectParent {
 
     [SerializeField] private KitchenObjectSO kitchenObjectSO;
     [SerializeField] private Transform objectSpawnPoint;
@@ -14,19 +13,20 @@ public class ClearCounter : MonoBehaviour
     private void Update() {
         if (testing && Input.GetKeyDown(KeyCode.T)) {
             if (kitchenObject != null) {
-                kitchenObject.setClearCounter(secondClearCounter);
+                kitchenObject.setKitchenObjectParent(secondClearCounter);
             }
         }
     }
 
-    public void Interact() {
+    public void Interact(Player player) {
        //Debug.Log("Interacted");
        if (kitchenObject == null) {
             Transform kitchenObjectTransform = Instantiate(kitchenObjectSO.prefab, objectSpawnPoint);
-            kitchenObjectTransform.GetComponent<KitchenObject>().setClearCounter(this);
+            kitchenObjectTransform.GetComponent<KitchenObject>().setKitchenObjectParent(this);
         } else {
-
-            Debug.Log(kitchenObject.GetClearCounter());
+            // Give object to player
+            kitchenObject.setKitchenObjectParent(player);
+            Debug.Log(kitchenObject.GetKitchenObjectParent());
 
         }
        //Debug.Log(kitchenObjectTransform.GetComponent<KitchenObject>().GetKitchenObjectSO().objectName);
