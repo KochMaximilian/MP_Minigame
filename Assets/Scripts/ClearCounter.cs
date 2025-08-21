@@ -5,18 +5,8 @@ public class ClearCounter : MonoBehaviour, IKitchenObjectParent {
 
     [SerializeField] private KitchenObjectSO kitchenObjectSO;
     [SerializeField] private Transform objectSpawnPoint;
-    [SerializeField] private ClearCounter secondClearCounter;
-    [SerializeField] private bool testing;
 
     private KitchenObject kitchenObject;
-
-    private void Update() {
-        if (testing && Input.GetKeyDown(KeyCode.T)) {
-            if (kitchenObject != null) {
-                kitchenObject.setKitchenObjectParent(secondClearCounter);
-            }
-        }
-    }
 
     public void Interact(Player player) {
        //Debug.Log("Interacted");
@@ -26,7 +16,6 @@ public class ClearCounter : MonoBehaviour, IKitchenObjectParent {
         } else {
             // Give object to player
             kitchenObject.setKitchenObjectParent(player);
-            Debug.Log(kitchenObject.GetKitchenObjectParent());
 
         }
        //Debug.Log(kitchenObjectTransform.GetComponent<KitchenObject>().GetKitchenObjectSO().objectName);
