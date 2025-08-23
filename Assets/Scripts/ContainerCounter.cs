@@ -10,23 +10,17 @@ public class ContainerCounter : BaseCounter {
     public event EventHandler OnPlayerGrabbedObject;
 
     public override void Interact(Player player) {
-        //Debug.Log("Interacted");
-        if (!HasKitchenObject()) {
-            Transform kitchenObjectTransform = Instantiate(kitchenObjectSO.prefab);
-            kitchenObjectTransform.GetComponent<KitchenObject>().setKitchenObjectParent(this); // TODO: change to player
-            OnPlayerGrabbedObject?.Invoke(this, EventArgs.Empty);
-        } else {
-            // Give object to player
-            GetKitchenObject().setKitchenObjectParent(player);
-
-
+        if (!player.HasKitchenObject()) {
+            // Player is not carrying anything
+            if (!HasKitchenObject()) {
+                // Counter is empty 
+                Transform kitchenObjectTransform = Instantiate(kitchenObjectSO.prefab);
+                kitchenObjectTransform.GetComponent<KitchenObject>().setKitchenObjectParent(this);
+                OnPlayerGrabbedObject?.Invoke(this, EventArgs.Empty);
+            } else {
+                GetKitchenObject().setKitchenObjectParent(player);
+            }
         }
-        //Debug.Log(kitchenObjectTransform.GetComponent<KitchenObject>().GetKitchenObjectSO().objectName);
-
-
-        // Better Logic saved for later:
-        /* Transform kitchenObjectTransform = Instantiate(kitchenObjectSO.prefab);
-         kitchenObjectTransform.GetComponent<KitchenObject>().setKitchenObjectParent(player); */
     }
 
 }
