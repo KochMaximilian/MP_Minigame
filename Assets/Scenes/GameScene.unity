@@ -172,6 +172,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 430513714629952970, guid: 21a5689a095882e49b9cab0ebc0b2f8e, type: 3}
+      propertyPath: cuttingRecipeSOArray.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 430513714629952970, guid: 21a5689a095882e49b9cab0ebc0b2f8e, type: 3}
+      propertyPath: 'cuttingRecipeSOArray.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a47f21d0f093faf45b450ee6df70e36e, type: 2}
+    - target: {fileID: 430513714629952970, guid: 21a5689a095882e49b9cab0ebc0b2f8e, type: 3}
+      propertyPath: 'cuttingRecipeSOArray.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c930cc26fa3443f44b6003c1a57fa8e4, type: 2}
+    - target: {fileID: 430513714629952970, guid: 21a5689a095882e49b9cab0ebc0b2f8e, type: 3}
+      propertyPath: 'cuttingRecipeSOArray.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d0be577dd6196948800feb626f9c8a2, type: 2}
     - target: {fileID: 3608096356428699111, guid: 21a5689a095882e49b9cab0ebc0b2f8e, type: 3}
       propertyPath: m_Name
       value: CuttingCounter
