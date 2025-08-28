@@ -14,6 +14,7 @@ public class CuttingCounter : BaseCounter {
         public float progressNormalized;
     }
 
+    public event EventHandler OnCut;
 
     public override void Interact(Player player) { // F Key
         //TODO: Drop Item on Counter
@@ -50,6 +51,8 @@ public class CuttingCounter : BaseCounter {
         if (HasKitchenObject() && HasRecipeWithInput(GetKitchenObject().GetKitchenObjectSO())) {
             // There is a KitchenObject here AND it can be cut
             cuttingProgress++;
+            OnCut?.Invoke(this, EventArgs.Empty);
+
             CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
 
             OnProgressChange?.Invoke(this, new OnProgressChangedEventArgs {

@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class CuttingCounterVisual : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
+    [SerializeField] private CuttingCounter cuttingCounter;
+    private Animator animator;
+    private const string CUT = "Cut";
+
+    private void Awake() {
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Start() {
+        cuttingCounter.OnCut += CuttingCounter_OnCut;
+    }
+
+    private void CuttingCounter_OnCut(object sender, System.EventArgs e) {
+        animator.SetTrigger(CUT);
     }
 }
