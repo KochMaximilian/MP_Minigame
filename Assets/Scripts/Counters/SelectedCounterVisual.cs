@@ -21,14 +21,16 @@ public class SelectedCounterVisual : MonoBehaviour {
 
     private void Show() {
         foreach (GameObject visualGameObject in visualGameObjectArray) {
-            visualGameObject.SetActive(true); Debug.Log("Counter Showing");
+            visualGameObject.SetActive(true); 
+            Debug.Log("Counter Showing");
         }
 
     }
 
     private void Hide() {
         foreach (GameObject visualGameObject in visualGameObjectArray) {
-            visualGameObject.SetActive(false); Debug.Log("Counter Hidden");
+            visualGameObject.SetActive(false); 
+            Debug.Log("Counter Hidden");
         }
     }
 

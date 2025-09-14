@@ -10,9 +10,12 @@ public class StoveCounter : BaseCounter {
     }
     private State currentState;
     [SerializeField] private FryingRecipeSO[] fryingRecipeSOArray;
+    [SerializeField] private BurningRecipeSO[] burningRecipeSOArray;
     [SerializeField] bool isDebugging = false;
     private float fryingTimer;
+    private float burningTimer;
     private FryingRecipeSO fryingRecipeSO;
+    private BurningRecipeSO burningRecipeSO;
 
     private void Start() {
         currentState = State.Idle;
@@ -24,6 +27,7 @@ public class StoveCounter : BaseCounter {
             switch (currentState) {
                 case State.Idle:
                     break;
+
                 case State.Frying:
                     fryingTimer += Time.deltaTime;
                     if (fryingTimer > fryingRecipeSO.fryingTimerMax) {
@@ -33,18 +37,31 @@ public class StoveCounter : BaseCounter {
                         if (isDebugging) {
                             Debug.Log(fryingRecipeSO.input + " Fried");
                         }
-                      
+                        burningRecipeSO = GetBurningRecipeSOInput(GetKitchenObject().GetKitchenObjectSO());
                         currentState = State.Fried;
-                    
+                        burningTimer = 0f;
                     }
                     break;
+
                 case State.Fried:
+                    burningTimer += Time.deltaTime;
+                    if (burningTimer > burningRecipeSO.burningTimerMax) {
+                        //Fried
+                        GetKitchenObject().DestroySelf();
+                        KitchenObject.SpawnKitchenObject(burningRecipeSO.output, this);
+                        if (isDebugging) {
+                            Debug.Log(burningRecipeSO.input + " Burned");
+                        }
+                        currentState = State.Burned;
+                    }
                     break;
+
                 case State.Burned:
                     break;
             }
             if (isDebugging) {
                 Debug.Log("Frying Time: " + (int)fryingTimer);
+                Debug.Log("Burning Time: " + (int)burningTimer);
                 Debug.Log("Stove State: " + currentState);
             }
         }
@@ -75,6 +92,7 @@ public class StoveCounter : BaseCounter {
             } else {
                 // Player is not carrying anything 
                 GetKitchenObject().setKitchenObjectParent(player);
+                currentState = State.Idle;
                 // TODO Progress
             }
         }
@@ -102,6 +120,13 @@ public class StoveCounter : BaseCounter {
         }
         return null;
     }
-
-
+    
+    private BurningRecipeSO GetBurningRecipeSOInput(KitchenObjectSO inputKitchenObjectSO) {
+        foreach (BurningRecipeSO burningRecipeSO in burningRecipeSOArray) {
+            if (burningRecipeSO.input == inputKitchenObjectSO) {
+                return burningRecipeSO;
+            }
+        }
+        return null;
+    }
 }
