@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class CuttingCounter : BaseCounter {
+public class CuttingCounter : BaseCounter, IHasProgress {
 
 
 
@@ -9,12 +9,7 @@ public class CuttingCounter : BaseCounter {
 
     private int cuttingProgress;
 
-    public event EventHandler<OnProgressChangedEventArgs> OnProgressChange;
-
-    public class OnProgressChangedEventArgs : EventArgs {
-        public float progressNormalized;
-    }
-
+    public event EventHandler<IHasProgress.OnProgressChangedEventArgs> OnProgressChange;
     public event EventHandler OnCut;
 
     public override void Interact(Player player) { // F Key
@@ -28,7 +23,7 @@ public class CuttingCounter : BaseCounter {
                     player.GetKitchenObject().setKitchenObjectParent(this); // Drop KitchenObject on empty Counter
                     cuttingProgress = 0;
                     CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
-                    OnProgressChange?.Invoke(this, new OnProgressChangedEventArgs {
+                    OnProgressChange?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs {
 
                         progressNormalized = (float)cuttingProgress / cuttingRecipeSO.cuttingProgressMax
                     });
@@ -45,7 +40,7 @@ public class CuttingCounter : BaseCounter {
                 // Player is not carrying anything 
                 GetKitchenObject().setKitchenObjectParent(player);
                 cuttingProgress = 0;
-                OnProgressChange?.Invoke(this, new OnProgressChangedEventArgs {
+                OnProgressChange?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs {
                     progressNormalized = 0f
                 });
             }
@@ -60,7 +55,7 @@ public class CuttingCounter : BaseCounter {
 
             CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
 
-            OnProgressChange?.Invoke(this, new OnProgressChangedEventArgs {
+            OnProgressChange?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs {
 
                 progressNormalized = (float)cuttingProgress / cuttingRecipeSO.cuttingProgressMax
             });
