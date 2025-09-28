@@ -114,7 +114,7 @@ public class StoveCounter : BaseCounter, IHasProgress {
                     OnProgressChange?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs {
                         progressNormalized = fryingTimer / fryingRecipeSO.fryingTimerMax
                     });
-                   
+
                 }
             } else {
                 // Player not carrying anything
@@ -132,6 +132,9 @@ public class StoveCounter : BaseCounter, IHasProgress {
                     state = currentState
                 });
                 // TODO Progress
+                OnProgressChange?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs {
+                    progressNormalized = 0f
+                });
             }
         }
     }
@@ -158,7 +161,7 @@ public class StoveCounter : BaseCounter, IHasProgress {
         }
         return null;
     }
-    
+
     private BurningRecipeSO GetBurningRecipeSOInput(KitchenObjectSO inputKitchenObjectSO) {
         foreach (BurningRecipeSO burningRecipeSO in burningRecipeSOArray) {
             if (burningRecipeSO.input == inputKitchenObjectSO) {
