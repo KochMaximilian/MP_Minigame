@@ -22,7 +22,7 @@ public class SelectedCounterVisual : MonoBehaviour {
     private void Show() {
         foreach (GameObject visualGameObject in visualGameObjectArray) {
             visualGameObject.SetActive(true); 
-            Debug.Log("Counter Showing");
+            //Debug.Log("Counter Showing");
         }
 
     }
@@ -30,7 +30,7 @@ public class SelectedCounterVisual : MonoBehaviour {
     private void Hide() {
         foreach (GameObject visualGameObject in visualGameObjectArray) {
             visualGameObject.SetActive(false); 
-            Debug.Log("Counter Hidden");
+           // Debug.Log("Counter Hidden");
         }
     }
 
