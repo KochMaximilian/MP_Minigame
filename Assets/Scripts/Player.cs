@@ -1,8 +1,5 @@
-
 using System;
-using UnityEngine;
-
-using System;
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour, IKitchenObjectParent {
@@ -44,12 +41,13 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
 
     // hold state
     private bool isInteractAlternateHeld;
-    private float interactAlternateTimer;
     private bool invokedForThisPress; // prevents double invoke (started + performed)
 
     // timing for fairness (shared between taps and hold repeats)
     private float lastInvokeTime = -Mathf.Infinity;
 
+    // coroutine handle for hold-repeat
+    private Coroutine interactAlternateCoroutine;
 
     private void Awake() {
         if (Instance != null) {
@@ -57,7 +55,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
         }
         Instance = this;
 
-        // default sensible values
+        // sensible defaults if unset
         if (minInvokeInterval <= 0f) minInvokeInterval = 0.12f;
         if (interactAlternateRepeatDelay <= 0f) interactAlternateRepeatDelay = 0.12f;
     }
@@ -79,32 +77,71 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
     }
 
     private void OnAlternateStarted(object s, EventArgs e) {
+        // mark held and reset per-press flag
         isInteractAlternateHeld = true;
-        interactAlternateTimer = 0f;
         invokedForThisPress = false;
 
         if (triggerImmediateOnStarted) {
+            // immediate-first mode: invoke now and start repeat coroutine with repeatDelay
             TryInvokeInteractAlternate();
             invokedForThisPress = true;
+
+            // Start repeating: use repeatDelay so first gap == repeat gap
+            StartHoldRepeatCoroutine(interactAlternateRepeatDelay);
+        } else {
+            // hold-first mode: do NOT start coroutine here.
+            // Wait for 'performed' (Input System Hold) to invoke the first action,
+            // then OnAlternatePerformed will start the repeat coroutine.
         }
     }
 
     private void OnAlternatePerformed(object s, EventArgs e) {
-        // If performed is used with a Hold interaction, use it as the first invocation
+        // If Input Action uses Hold and performed is first activation
         if (!invokedForThisPress) {
             TryInvokeInteractAlternate();
             invokedForThisPress = true;
+
+            // Start repeating after repeat delay so first gap == repeat gap
+            StartHoldRepeatCoroutine(interactAlternateRepeatDelay);
+        } else {
+            // If we already invoked on started, ensure coroutine is running with correct timing
+            if (interactAlternateCoroutine == null) {
+                StartHoldRepeatCoroutine(interactAlternateRepeatDelay);
+            }
         }
 
-        // keep held state so repeats can start
         isInteractAlternateHeld = true;
-        interactAlternateTimer = 0f;
     }
 
     private void OnAlternateCanceled(object s, EventArgs e) {
         isInteractAlternateHeld = false;
-        interactAlternateTimer = 0f;
         invokedForThisPress = false;
+        StopHoldRepeatCoroutine();
+    }
+
+    private void StartHoldRepeatCoroutine(float firstWait) {
+        StopHoldRepeatCoroutine();
+        interactAlternateCoroutine = StartCoroutine(HoldRepeatCoroutine(firstWait));
+    }
+
+    private void StopHoldRepeatCoroutine() {
+        if (interactAlternateCoroutine != null) {
+            StopCoroutine(interactAlternateCoroutine);
+            interactAlternateCoroutine = null;
+        }
+    }
+
+    private IEnumerator HoldRepeatCoroutine(float firstWait) {
+        // wait before first repeat (firstWait can be interactAlternateRepeatDelay or initialDelay)
+        if (firstWait > 0f) yield return new WaitForSeconds(firstWait);
+
+        // loop while held
+        while (isInteractAlternateHeld) {
+            // TryInvoke checks the global cooldown
+            TryInvokeInteractAlternate();
+            // wait the stable repeat interval
+            yield return new WaitForSeconds(interactAlternateRepeatDelay);
+        }
     }
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e) {
@@ -116,21 +153,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
     private void Update() {
         HandleMovement();
         HandleInteraction();
-
-        // repeat logic: after initial delay, repeat at interval while held
-        if (isInteractAlternateHeld) {
-            interactAlternateTimer += Time.deltaTime;
-
-            if (interactAlternateTimer >= interactAlternateInitialDelay) {
-                float timeSinceRepeatStart = interactAlternateTimer - interactAlternateInitialDelay;
-                if (timeSinceRepeatStart >= interactAlternateRepeatDelay) {
-                    // ensure we don't violate the global min interval (taps vs hold)
-                    TryInvokeInteractAlternate();
-                    // reset to initialDelay so next repeat waits repeatDelay again
-                    interactAlternateTimer = interactAlternateInitialDelay;
-                }
-            }
-        }
+        // no longer using manual timer logic for repeats (coroutine handles it)
     }
 
     private bool CanInvokeNow() {
@@ -141,10 +164,15 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
     private void TryInvokeInteractAlternate() {
         if (selectedCounter == null) return;
 
-        // Enforce global min interval between alternate invokes (taps + hold)
-        if (!CanInvokeNow()) return;
+        if (!CanInvokeNow()) {
+            // optional: debug only
+            // Debug.Log($"[Player] Skipping invoke (cooldown) @ {Time.time:F3}");
+            return;
+        }
 
         try {
+            // optional debug:
+            // Debug.Log($"[Player] Invoking InteractAlternate on '{selectedCounter.name}' @ {Time.time:F3}");
             selectedCounter.InteractAlternate(this);
             lastInvokeTime = Time.time;
         } catch (Exception ex) {

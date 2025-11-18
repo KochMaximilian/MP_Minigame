@@ -5544,9 +5544,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   objectHoldPoint: {fileID: 1255058027}
-  interactAlternateInitialDelay: 0.35
+  interactAlternateInitialDelay: 2
   interactAlternateRepeatDelay: 0.35
-  triggerImmediateOnStarted: 1
+  triggerImmediateOnStarted: 0
   enforceMinIntervalBetweenInvokes: 1
   minInvokeInterval: 0.35
 --- !u!1001 &2018684905

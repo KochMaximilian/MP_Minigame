@@ -256,7 +256,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""26e972fe-10f9-45da-b671-65c4850b30e8"",
                     ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": ""Hold"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Interact"",
