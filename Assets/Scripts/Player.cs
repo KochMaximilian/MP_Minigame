@@ -2,6 +2,9 @@
 using System;
 using UnityEngine;
 
+using System;
+using UnityEngine;
+
 public class Player : MonoBehaviour, IKitchenObjectParent {
 
     public static Player Instance { get; private set; }
@@ -16,10 +19,36 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
     [SerializeField] private LayerMask CountersLayerMask;
     [SerializeField] private Transform objectHoldPoint;
 
+    // Hold/repeat tuning (tweak in inspector)
+    [Header("Hold / Repeat Tuning")]
+    [Tooltip("Time after press before repeating begins (seconds). If triggerImmediateOnStarted is false and you configured a Hold interaction, the 'performed' event can be the first call.")]
+    [SerializeField] private float interactAlternateInitialDelay = 0.35f; // time before repeats start
+
+    [Tooltip("Interval between repeated alternate actions while holding (seconds). Also used as the minimum interval between any two alternate invokes when 'Enforce Min Interval' is enabled.")]
+    [SerializeField] private float interactAlternateRepeatDelay = 0.12f;  // repeat interval
+
+    [Tooltip("When true, the first action happens immediately on button-down (started). If false, the first action happens on performed (useful when binding uses Hold interaction).")]
+    [SerializeField] private bool triggerImmediateOnStarted = true;       // immediate action on button down
+
+    [Header("Fairness / Anti-Spam")]
+    [Tooltip("If true, taps cannot invoke alternate action faster than the repeat delay. Makes tapping and holding produce the same max rate.")]
+    [SerializeField] private bool enforceMinIntervalBetweenInvokes = true;
+
+    [Tooltip("Minimum time allowed between two alternate invokes when enforcement is enabled (seconds). Typically set equal to Repeat Delay.")]
+    [SerializeField] private float minInvokeInterval = 0.12f;
+
     private bool isWalking;
     private Vector3 lastInteractDirection;
     private BaseCounter selectedCounter;
     private KitchenObject kitchenObject;
+
+    // hold state
+    private bool isInteractAlternateHeld;
+    private float interactAlternateTimer;
+    private bool invokedForThisPress; // prevents double invoke (started + performed)
+
+    // timing for fairness (shared between taps and hold repeats)
+    private float lastInvokeTime = -Mathf.Infinity;
 
 
     private void Awake() {
@@ -27,43 +56,107 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
             Debug.Log("There is more than 1 Player Instance");
         }
         Instance = this;
+
+        // default sensible values
+        if (minInvokeInterval <= 0f) minInvokeInterval = 0.12f;
+        if (interactAlternateRepeatDelay <= 0f) interactAlternateRepeatDelay = 0.12f;
     }
 
-    private void Start() {
+    private void OnEnable() {
+        if (gameInput == null) return;
         gameInput.OnInteractAction += GameInput_OnInteractAction;
-        gameInput.OnInteractAlternateAction += GameInput_OnInteractAlternateAction;
-
-
+        gameInput.OnInteractAlternateStarted += OnAlternateStarted;
+        gameInput.OnInteractAlternatePerformed += OnAlternatePerformed;
+        gameInput.OnInteractAlternateCanceled += OnAlternateCanceled;
     }
 
-    private void GameInput_OnInteractAlternateAction(object sender, EventArgs e) {
-        Debug.Log($"[Player] InteractAlternate pressed. selectedCounter = {(selectedCounter == null ? "null" : selectedCounter.name + " (" + selectedCounter.GetType().Name + ")")}");
-        if (selectedCounter != null) {
-            try {
-                selectedCounter.InteractAlternate(this);
-            } catch (Exception ex) {
-                Debug.LogError($"[Player] Exception in InteractAlternate on '{selectedCounter.name}': {ex}");
-            }
+    private void OnDisable() {
+        if (gameInput == null) return;
+        gameInput.OnInteractAction -= GameInput_OnInteractAction;
+        gameInput.OnInteractAlternateStarted -= OnAlternateStarted;
+        gameInput.OnInteractAlternatePerformed -= OnAlternatePerformed;
+        gameInput.OnInteractAlternateCanceled -= OnAlternateCanceled;
+    }
+
+    private void OnAlternateStarted(object s, EventArgs e) {
+        isInteractAlternateHeld = true;
+        interactAlternateTimer = 0f;
+        invokedForThisPress = false;
+
+        if (triggerImmediateOnStarted) {
+            TryInvokeInteractAlternate();
+            invokedForThisPress = true;
         }
     }
 
-    private void GameInput_OnInteractAction(object sender, System.EventArgs e) {
+    private void OnAlternatePerformed(object s, EventArgs e) {
+        // If performed is used with a Hold interaction, use it as the first invocation
+        if (!invokedForThisPress) {
+            TryInvokeInteractAlternate();
+            invokedForThisPress = true;
+        }
 
+        // keep held state so repeats can start
+        isInteractAlternateHeld = true;
+        interactAlternateTimer = 0f;
+    }
+
+    private void OnAlternateCanceled(object s, EventArgs e) {
+        isInteractAlternateHeld = false;
+        interactAlternateTimer = 0f;
+        invokedForThisPress = false;
+    }
+
+    private void GameInput_OnInteractAction(object sender, System.EventArgs e) {
         if (selectedCounter != null) {
             selectedCounter.Interact(this);
         }
     }
 
     private void Update() {
-        HandelMovement();
-        HandelInteraction();
+        HandleMovement();
+        HandleInteraction();
+
+        // repeat logic: after initial delay, repeat at interval while held
+        if (isInteractAlternateHeld) {
+            interactAlternateTimer += Time.deltaTime;
+
+            if (interactAlternateTimer >= interactAlternateInitialDelay) {
+                float timeSinceRepeatStart = interactAlternateTimer - interactAlternateInitialDelay;
+                if (timeSinceRepeatStart >= interactAlternateRepeatDelay) {
+                    // ensure we don't violate the global min interval (taps vs hold)
+                    TryInvokeInteractAlternate();
+                    // reset to initialDelay so next repeat waits repeatDelay again
+                    interactAlternateTimer = interactAlternateInitialDelay;
+                }
+            }
+        }
     }
 
-    private void HandelInteraction() {
+    private bool CanInvokeNow() {
+        if (!enforceMinIntervalBetweenInvokes) return true;
+        return Time.time - lastInvokeTime >= minInvokeInterval - 0.0001f;
+    }
+
+    private void TryInvokeInteractAlternate() {
+        if (selectedCounter == null) return;
+
+        // Enforce global min interval between alternate invokes (taps + hold)
+        if (!CanInvokeNow()) return;
+
+        try {
+            selectedCounter.InteractAlternate(this);
+            lastInvokeTime = Time.time;
+        } catch (Exception ex) {
+            Debug.LogError($"Exception in InteractAlternate on '{selectedCounter.name}': {ex}");
+            lastInvokeTime = Time.time;
+        }
+    }
+
+    private void HandleInteraction() {
 
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
         Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
-
 
         if (moveDir != Vector3.zero) {
             lastInteractDirection = moveDir;
@@ -72,25 +165,18 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
         float interactionDistance = 2f;
         if (Physics.Raycast(transform.position, lastInteractDirection, out RaycastHit raycastHit, interactionDistance, CountersLayerMask)) {
             if (raycastHit.transform.TryGetComponent(out BaseCounter baseCounter)) {
-                // hit a clear counter
                 if (baseCounter != selectedCounter) {
                     SetSelectedCounter(baseCounter);
-
                 }
             } else {
                 SetSelectedCounter(null);
-
             }
         } else {
             SetSelectedCounter(null);
-
         }
-
-        // Debug.Log(selectedCounter);
     }
 
-
-    private void HandelMovement() {
+    private void HandleMovement() {
 
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
 
@@ -109,39 +195,30 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
         );
 
         if (!canMove) {
-            // can not move torwards moveDir
-
-            // try to move sideways x
             Vector3 moveDirX = new Vector3(moveDir.x, 0f, 0f).normalized;
             canMove = moveDir.x != 0 && !Physics.CapsuleCast(
-            transform.position,
-            transform.position + Vector3.up * PlayerHeight,
-            playerRadius,
-            moveDirX,
-            moveDistance
-        );
-
-            if (canMove) {
-                // can move only on x
-                moveDir = moveDirX;
-            } else {
-                // can not move only on x
-                // attemtd only to move on z
-
-                Vector3 moveDirZ = new Vector3(0f, 0f, moveDir.z).normalized;
-                canMove = moveDir.z != 0 && !Physics.CapsuleCast(
                 transform.position,
                 transform.position + Vector3.up * PlayerHeight,
                 playerRadius,
-                moveDirZ,
-                moveDistance);
+                moveDirX,
+                moveDistance
+            );
+
+            if (canMove) {
+                moveDir = moveDirX;
+            } else {
+                Vector3 moveDirZ = new Vector3(0f, 0f, moveDir.z).normalized;
+                canMove = moveDir.z != 0 && !Physics.CapsuleCast(
+                    transform.position,
+                    transform.position + Vector3.up * PlayerHeight,
+                    playerRadius,
+                    moveDirZ,
+                    moveDistance);
 
                 if (canMove) {
-                    // can move only on z
                     moveDir = moveDirZ;
                 } else {
-                    // can not move at all
-
+                    moveDir = Vector3.zero;
                 }
             }
         }
@@ -152,17 +229,15 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
 
         isWalking = moveDir != Vector3.zero;
 
-
         float rotationSpeed = 10f;
-        transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotationSpeed);
-
+        if (moveDir != Vector3.zero) {
+            transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotationSpeed);
+        }
     }
-
 
     public bool IsWalking() {
         return isWalking;
     }
-
 
     private void SetSelectedCounter(BaseCounter selectedCounter) {
         this.selectedCounter = selectedCounter;
@@ -175,7 +250,6 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
     public Transform GetKitchenObjectFollowTransform() {
         return objectHoldPoint;
     }
-
 
     public void SetKitchenObject(KitchenObject kitchenObject) {
         this.kitchenObject = kitchenObject;
