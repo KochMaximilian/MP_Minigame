@@ -10,7 +10,9 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent {
     public virtual void Interact(Player player) { Debug.LogError("BaseCounter.Interact();"); }
 
     public virtual void InteractAlternate(Player player) {
-        Debug.LogError("BaseCounter.InteractAlternate();");
+        #if UNITY_EDITOR
+            Debug.LogWarning($"BaseCounter.InteractAlternate() called on '{gameObject.name}'. Override this in derived counters if needed.");
+        #endif
     }
 
     public Transform GetKitchenObjectFollowTransform() {
@@ -30,5 +32,5 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent {
         return kitchenObject != null;
     }
 
- 
+
 }

@@ -37,8 +37,13 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
     }
 
     private void GameInput_OnInteractAlternateAction(object sender, EventArgs e) {
+        Debug.Log($"[Player] InteractAlternate pressed. selectedCounter = {(selectedCounter == null ? "null" : selectedCounter.name + " (" + selectedCounter.GetType().Name + ")")}");
         if (selectedCounter != null) {
-            selectedCounter.InteractAlternate(this);
+            try {
+                selectedCounter.InteractAlternate(this);
+            } catch (Exception ex) {
+                Debug.LogError($"[Player] Exception in InteractAlternate on '{selectedCounter.name}': {ex}");
+            }
         }
     }
 

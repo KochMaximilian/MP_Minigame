@@ -34,6 +34,7 @@ public class OrderUI : MonoBehaviour
          foreach (RecipeSO recipeSO in DeliveryManager.Instance.GetWaitingRecipeSOList()) {
             Transform recipeTransfrom =  Instantiate(recipeTemplate, container);
             recipeTransfrom.gameObject.SetActive(true);
+            recipeTransfrom.GetComponent<OrderSingleUI>().SetRecipeSO(recipeSO);
 
         }
     }
