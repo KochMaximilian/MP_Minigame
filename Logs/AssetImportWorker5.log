@@ -1,0 +1,342 @@
+2025-11-20T23:03:12.383Z|0x36a8|Using pre-set license
+2025-11-20T23:03:12.383Z|0x36a8|Built from '6000.0/staging' branch; Version is '6000.0.38f1 (82314a941f2d) revision 8532298'; Using compiler version '193933523'; Build Type 'Release'
+2025-11-20T23:03:12.383Z|0x36a8|OS: 'Windows 11  (10.0.26100) 64bit Professional' Language: 'en' Physical Memory: 65460 MB
+2025-11-20T23:03:12.383Z|0x36a8|BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+2025-11-20T23:03:12.386Z|0x36a8|
+COMMAND LINE ARGUMENTS:
+2025-11-20T23:03:12.386Z|0x36a8|F:\Unity\6000.0.38f1\Editor\Unity.exe
+2025-11-20T23:03:12.386Z|0x36a8|-adb2
+2025-11-20T23:03:12.386Z|0x36a8|-batchMode
+2025-11-20T23:03:12.386Z|0x36a8|-noUpm
+2025-11-20T23:03:12.386Z|0x36a8|-name
+2025-11-20T23:03:12.386Z|0x36a8|AssetImportWorker5
+2025-11-20T23:03:12.386Z|0x36a8|-projectPath
+2025-11-20T23:03:12.386Z|0x36a8|F:/Unity Projects Active/MP_Minigame
+2025-11-20T23:03:12.386Z|0x36a8|-logFile
+2025-11-20T23:03:12.386Z|0x36a8|Logs/AssetImportWorker5.log
+2025-11-20T23:03:12.386Z|0x36a8|-srvPort
+2025-11-20T23:03:12.386Z|0x36a8|54123
+2025-11-20T23:03:12.386Z|0x36a8|-job-worker-count
+2025-11-20T23:03:12.386Z|0x36a8|7
+2025-11-20T23:03:12.386Z|0x36a8|-background-job-worker-count
+2025-11-20T23:03:12.386Z|0x36a8|8
+2025-11-20T23:03:12.386Z|0x36a8|-gc-helper-count
+2025-11-20T23:03:12.386Z|0x36a8|1
+2025-11-20T23:03:12.386Z|0x36a8|Successfully changed project path to: F:/Unity Projects Active/MP_Minigame
+2025-11-20T23:03:12.395Z|0x36a8|F:/Unity Projects Active/MP_Minigame
+2025-11-20T23:03:12.395Z|0x36a8|[UnityMemory] Configuration Parameters - Can be set up in boot.config
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-bucket-allocator-granularity=16"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-bucket-allocator-bucket-count=8"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-bucket-allocator-block-size=33554432"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-bucket-allocator-block-count=8"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-main-allocator-block-size=16777216"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-thread-allocator-block-size=16777216"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-gfx-main-allocator-block-size=16777216"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-gfx-thread-allocator-block-size=16777216"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-cache-allocator-block-size=4194304"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-typetree-allocator-block-size=2097152"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-profiler-bucket-allocator-granularity=16"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-profiler-bucket-allocator-block-count=8"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-profiler-allocator-block-size=16777216"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-profiler-editor-allocator-block-size=1048576"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-temp-allocator-size-main=16777216"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-job-temp-allocator-block-size=2097152"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-job-temp-allocator-block-size-background=1048576"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-allocator-temp-initial-block-size-main=262144"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-temp-allocator-size-background-worker=32768"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-temp-allocator-size-job-worker=262144"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-temp-allocator-size-preload-manager=33554432"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-temp-allocator-size-audio-worker=65536"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-temp-allocator-size-cloud-worker=32768"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+2025-11-20T23:03:12.395Z|0x36a8|    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+2025-11-20T23:03:12.396Z|0x36a8|    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+2025-11-20T23:03:12.396Z|0x36a8|    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+2025-11-20T23:03:12.396Z|0x36a8|    "memorysetup-temp-allocator-size-gfx=262144"
+2025-11-20T23:03:12.400Z|0x36a8|Player connection [13992]  Target information:
+
+2025-11-20T23:03:12.400Z|0x36a8|Player connection [13992]  * "[IP] 192.168.1.14 [Port] 0 [Flags] 2 [Guid] 1075933144 [EditorId] 1075933144 [Version] 1048832 [Id] WindowsEditor(7,Jesus) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+2025-11-20T23:03:12.402Z|0x36a8|Player connection [13992] Host joined multi-casting on [225.0.0.222:54997]...
+2025-11-20T23:03:12.402Z|0x36a8|Player connection [13992] Host joined alternative multi-casting on [225.0.0.222:34997]...
+2025-11-20T23:03:12.402Z|0x36a8|JobSystem: Creating JobQueue using job-worker-count value 7
+2025-11-20T23:03:12.406Z|0x36a8|Input System module state changed to: Initialized.
+2025-11-20T23:03:12.406Z|0x36a8|[Physics::Module] Initialized fallback backend.
+2025-11-20T23:03:12.407Z|0x36a8|[Physics::Module] Id: 0xdecafbad
+2025-11-20T23:03:12.444Z|0x36a8|Library Redirect Path: Library/
+2025-11-20T23:03:12.464Z|0x36a8|[Physics::Module] Selected backend.
+2025-11-20T23:03:12.464Z|0x36a8|[Physics::Module] Name: PhysX
+2025-11-20T23:03:12.464Z|0x36a8|[Physics::Module] Id: 0xf2b8ea05
+2025-11-20T23:03:12.464Z|0x36a8|[Physics::Module] SDK Version: 4.1.2
+2025-11-20T23:03:12.464Z|0x36a8|[Physics::Module] Integration Version: 1.0.0
+2025-11-20T23:03:12.464Z|0x36a8|[Physics::Module] Threading Mode: Multi-Threaded
+2025-11-20T23:03:12.477Z|0x36a8|Refreshing native plugins compatible for Editor in 3.39 ms, found 6 plugins.
+2025-11-20T23:03:12.478Z|0x36a8|Preloading 1 native plugins for Editor in 1.69 ms.
+2025-11-20T23:03:12.478Z|0x36a8|Initialize engine version: 6000.0.38f1 (82314a941f2d)
+2025-11-20T23:03:12.479Z|0x36a8|[Subsystems] Discovering subsystems at path F:/Unity/6000.0.38f1/Editor/Data/Resources/UnitySubsystems
+2025-11-20T23:03:12.479Z|0x36a8|[Subsystems] Discovering subsystems at path F:/Unity Projects Active/MP_Minigame/Assets
+2025-11-20T23:03:12.479Z|0x36a8|GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+2025-11-20T23:03:12.664Z|0x36a8|Direct3D:
+2025-11-20T23:03:12.664Z|0x36a8|    Version:  Direct3D 11.0 [level 11.1]
+2025-11-20T23:03:12.664Z|0x36a8|    Renderer: NVIDIA GeForce RTX 4080 (ID=0x2704)
+2025-11-20T23:03:12.664Z|0x36a8|    Vendor:   NVIDIA
+2025-11-20T23:03:12.664Z|0x36a8|    VRAM:     16050 MB
+2025-11-20T23:03:12.664Z|0x36a8|    Driver:   32.0.15.8180
+2025-11-20T23:03:12.760Z|0x36a8|Initialize mono
+2025-11-20T23:03:12.760Z|0x36a8|Mono path[0] = 'F:/Unity/6000.0.38f1/Editor/Data/Managed'
+2025-11-20T23:03:12.760Z|0x36a8|Mono path[1] = 'F:/Unity/6000.0.38f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+2025-11-20T23:03:12.760Z|0x36a8|Mono config path = 'F:/Unity/6000.0.38f1/Editor/Data/MonoBleedingEdge/etc'
+2025-11-20T23:03:12.760Z|0x36a8|Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56608
+2025-11-20T23:03:12.793Z|0x36a8|Begin MonoManager ReloadAssembly
+2025-11-20T23:03:12.958Z|0x36a8|Registering precompiled unity dll's ...
+2025-11-20T23:03:12.958Z|0x36a8|Register platform support module: F:/Unity/6000.0.38f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+2025-11-20T23:03:12.959Z|0x36a8|Register platform support module: F:/Unity/6000.0.38f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+2025-11-20T23:03:12.961Z|0x36a8|Registered in 0.002817 seconds.
+2025-11-20T23:03:13.100Z|0x36a8|- Loaded All Assemblies, in  0.307 seconds
+2025-11-20T23:03:13.138Z|0x36a8|Native extension for WindowsStandalone target not found
+2025-11-20T23:03:13.139Z|0x36a8|Native extension for WebGL target not found
+2025-11-20T23:03:13.365Z|0x36a8|Mono: successfully reloaded assembly
+2025-11-20T23:03:13.378Z|0x36a8|- Finished resetting the current domain, in  0.277 seconds
+2025-11-20T23:03:13.378Z|0x36a8|Domain Reload Profiling: 584ms
+	BeginReloadAssembly (109ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (30ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (39ms)
+	LoadAllAssembliesAndSetupDomain (118ms)
+		LoadAssemblies (108ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (116ms)
+			TypeCache.Refresh (115ms)
+				TypeCache.ScanAssembly (105ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (277ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (233ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (23ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (45ms)
+			ProcessInitializeOnLoadAttributes (120ms)
+			ProcessInitializeOnLoadMethodAttributes (42ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+2025-11-20T23:03:13.515Z|0x36a8|Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+========================================================================
+2025-11-20T23:03:13.571Z|0x36a8|Worker process is ready to serve import requests
+2025-11-20T23:03:13.571Z|0x36a8|Import Worker Mode flag is 0x00
+2025-11-20T23:03:13.622Z|0x36a8|Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+2025-11-20T23:03:14.448Z|0x36a8|- Loaded All Assemblies, in  0.725 seconds
+2025-11-20T23:03:14.568Z|0x36a8|Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+2025-11-20T23:03:14.658Z|0x36a8|'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+2025-11-20T23:03:14.694Z|0x36a8|Refreshing native plugins compatible for Editor in 2.53 ms, found 6 plugins.
+2025-11-20T23:03:14.804Z|0x36a8|Native extension for WindowsStandalone target not found
+2025-11-20T23:03:14.805Z|0x36a8|Native extension for WebGL target not found
+2025-11-20T23:03:14.910Z|0x36a8|Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-MP_Game
+Package Manager log level set to [2]
+2025-11-20T23:03:15.232Z|0x36a8|[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+2025-11-20T23:03:15.232Z|0x36a8|[Package Manager] Unable to send message (not connected to server process).
+2025-11-20T23:03:15.232Z|0x36a8|[Package Manager] Cannot connect to Unity Package Manager local server
+2025-11-20T23:03:15.819Z|0x36a8|Mono: successfully reloaded assembly
+2025-11-20T23:03:15.828Z|0x36a8|- Finished resetting the current domain, in  1.130 seconds
+2025-11-20T23:03:15.829Z|0x36a8|Domain Reload Profiling: 1853ms
+	BeginReloadAssembly (138ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (23ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (517ms)
+		LoadAssemblies (309ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (290ms)
+			TypeCache.Refresh (204ms)
+				TypeCache.ScanAssembly (187ms)
+			BuildScriptInfoCaches (72ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1130ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1011ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (140ms)
+			ProcessInitializeOnLoadAttributes (593ms)
+			ProcessInitializeOnLoadMethodAttributes (270ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+2025-11-20T23:03:16.048Z|0x36a8|Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+2025-11-20T23:03:16.227Z|0x36a8|Refreshing native plugins compatible for Editor in 2.53 ms, found 6 plugins.
+2025-11-20T23:03:16.227Z|0x36a8|Preloading 1 native plugins for Editor in 0.06 ms.
+2025-11-20T23:03:16.229Z|0x6140|Unloading 312 Unused Serialized files (Serialized files now loaded: 0)
+2025-11-20T23:03:16.239Z|0x36a8|Unloading 8797 unused Assets / (4.5 MB). Loaded Objects now: 9618.
+Memory consumption went from 215.3 MB to 210.8 MB.
+2025-11-20T23:03:16.239Z|0x36a8|Total: 9.881900 ms (FindLiveObjects: 0.794400 ms CreateObjectMapping: 0.496000 ms MarkObjects: 6.579900 ms  DeleteObjects: 2.010500 ms)
+
+2025-11-20T23:03:25.016Z|0x36a8|========================================================================
+Received Import Request.
+  Time since last request: 690663.534224 seconds.
+  path: Assets/UI/XBox Series/Default/xbox_lb.png
+  artifactKey: Guid(b92d35f11b08a1845a04cdc7d6ef8d27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T23:03:25.027Z|0x36a8|Start importing Assets/UI/XBox Series/Default/xbox_lb.png using Guid(b92d35f11b08a1845a04cdc7d6ef8d27) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '146010cd06ab845e33458c60268de2ea') in 0.0818922 seconds
+2025-11-20T23:03:25.125Z|0x36a8|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+2025-11-20T23:03:25.126Z|0x36a8|========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/UI/XBox Series/Default/xbox_rs_outline.png
+  artifactKey: Guid(e6f95cbf1e0bf324991a0828040b9fcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T23:03:25.135Z|0x36a8|Start importing Assets/UI/XBox Series/Default/xbox_rs_outline.png using Guid(e6f95cbf1e0bf324991a0828040b9fcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '58c01ed2feb09a935364d1dbb41a710b') in 0.0054958 seconds
+2025-11-20T23:03:25.154Z|0x36a8|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+2025-11-20T23:03:25.169Z|0x36a8|========================================================================
+Received Import Request.
+  Time since last request: 0.015054 seconds.
+  path: Assets/UI/XBox Series/Default/xbox_dpad_up.png
+  artifactKey: Guid(9cb82a5e388ac804a8c0011d1f67a936) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T23:03:25.178Z|0x36a8|Start importing Assets/UI/XBox Series/Default/xbox_dpad_up.png using Guid(9cb82a5e388ac804a8c0011d1f67a936) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3ab3ba98ae929e2f4db13ef3a2abd80a') in 0.006145 seconds
+2025-11-20T23:03:25.199Z|0x36a8|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+2025-11-20T23:03:25.199Z|0x36a8|========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/UI/XBox Series/Default/xbox_elite_paddle_bottom_left.png
+  artifactKey: Guid(d26360d8e4922cb4c9b4461e44292d36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T23:03:25.211Z|0x36a8|Start importing Assets/UI/XBox Series/Default/xbox_elite_paddle_bottom_left.png using Guid(d26360d8e4922cb4c9b4461e44292d36) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ce9f99ade3a5358ca2cf3372bb988b2b') in 0.0057243 seconds
+2025-11-20T23:03:25.231Z|0x36a8|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+2025-11-20T23:03:25.231Z|0x36a8|========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/UI/XBox Series/Default/xbox_elite_paddle_bottom_right_outline.png
+  artifactKey: Guid(8939083e797aa334abf1564b0fd2ffd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T23:03:25.239Z|0x36a8|Start importing Assets/UI/XBox Series/Default/xbox_elite_paddle_bottom_right_outline.png using Guid(8939083e797aa334abf1564b0fd2ffd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '383aab30138bf67360ed818e5d08daeb') in 0.0060465 seconds
+2025-11-20T23:03:25.260Z|0x36a8|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+2025-11-20T23:03:25.966Z|0x36a8|========================================================================
+Received Import Request.
+  Time since last request: 0.706036 seconds.
+  path: Assets/UI/XBox Series/Default/xbox_dpad_horizontal_outline.png
+  artifactKey: Guid(00d1b320b128f0b4781e5ca400172fd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T23:03:25.975Z|0x36a8|Start importing Assets/UI/XBox Series/Default/xbox_dpad_horizontal_outline.png using Guid(00d1b320b128f0b4781e5ca400172fd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '60a9ff133adc77e1b409b8d8ed7138c2') in 0.0067994 seconds
+2025-11-20T23:03:25.998Z|0x36a8|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+2025-11-20T23:03:25.998Z|0x36a8|========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/UI/XBox Series/Default/xbox_dpad_left.png
+  artifactKey: Guid(5c9589cdbdf5f97429ed055322ab2421) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T23:03:26.007Z|0x36a8|Start importing Assets/UI/XBox Series/Default/xbox_dpad_left.png using Guid(5c9589cdbdf5f97429ed055322ab2421) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0365a04d51e84d06c13a8568ef394e39') in 0.0059777 seconds
+2025-11-20T23:03:26.027Z|0x36a8|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+2025-11-20T23:03:26.027Z|0x36a8|========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/UI/XBox Series/Default/xbox_dpad_right.png
+  artifactKey: Guid(25c2c862ad59cbc44b6be174caee7c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T23:03:26.036Z|0x36a8|Start importing Assets/UI/XBox Series/Default/xbox_dpad_right.png using Guid(25c2c862ad59cbc44b6be174caee7c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4ff5265748e70a31bb4d6b35e8ee5cc6') in 0.0057408 seconds
+2025-11-20T23:03:26.058Z|0x36a8|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+2025-11-20T23:03:30.177Z|0x36a8|========================================================================
+Received Import Request.
+  Time since last request: 4.119727 seconds.
+  path: Assets/UI/XBox Series/Default/xbox_button_start_icon.png
+  artifactKey: Guid(f5608e2b15e2a7d418b78163378910d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T23:03:30.186Z|0x36a8|Start importing Assets/UI/XBox Series/Default/xbox_button_start_icon.png using Guid(f5608e2b15e2a7d418b78163378910d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '38e6d513f49f5e56e44ebb1106abfff0') in 0.0155048 seconds
+2025-11-20T23:03:30.217Z|0x36a8|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+2025-11-20T23:03:30.217Z|0x36a8|========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/UI/XBox Series/Default/xbox_button_y_outline.png
+  artifactKey: Guid(23524e31c34d07647b00f1401e7a756f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T23:03:30.228Z|0x36a8|Start importing Assets/UI/XBox Series/Default/xbox_button_y_outline.png using Guid(23524e31c34d07647b00f1401e7a756f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9edfc2c12f4d744e0c401ac214e61cfe') in 0.0067411 seconds
+2025-11-20T23:03:30.248Z|0x36a8|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+2025-11-20T23:03:30.248Z|0x36a8|========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/UI/XBox Series/Default/xbox_button_start_outline.png
+  artifactKey: Guid(7d29bded82109b047bacd3d9fb62621a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T23:03:30.258Z|0x36a8|Start importing Assets/UI/XBox Series/Default/xbox_button_start_outline.png using Guid(7d29bded82109b047bacd3d9fb62621a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b742894aa236b3457508c3d413266017') in 0.0060795 seconds
+2025-11-20T23:03:30.278Z|0x36a8|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+2025-11-20T23:03:30.719Z|0x36a8|========================================================================
+Received Import Request.
+  Time since last request: 0.441280 seconds.
+  path: Assets/UI/XBox Series/Default/xbox_button_back_outline.png
+  artifactKey: Guid(2cf4e30f6f47bd649a4822a0cfc974e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T23:03:30.731Z|0x36a8|Start importing Assets/UI/XBox Series/Default/xbox_button_back_outline.png using Guid(2cf4e30f6f47bd649a4822a0cfc974e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '309aa1a6e247ebd29e4f02b688abe028') in 0.0128641 seconds
+2025-11-20T23:03:30.760Z|0x36a8|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+2025-11-20T23:03:30.760Z|0x36a8|========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/UI/XBox Series/Default/xbox_button_color_a.png
+  artifactKey: Guid(e672a5854c80ed24c94605409d57dda4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T23:03:30.769Z|0x36a8|Start importing Assets/UI/XBox Series/Default/xbox_button_color_a.png using Guid(e672a5854c80ed24c94605409d57dda4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd161f59417de823be28b5633fbd6b24a') in 0.0060154 seconds
+2025-11-20T23:03:30.790Z|0x36a8|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+2025-11-20T23:03:30.790Z|0x36a8|========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/UI/XBox Series/Default/xbox_button_color_b.png
+  artifactKey: Guid(f9467815c0f6aea418ece8ba4793f77c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T23:03:30.800Z|0x36a8|Start importing Assets/UI/XBox Series/Default/xbox_button_color_b.png using Guid(f9467815c0f6aea418ece8ba4793f77c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '459da86e987c8ddf4ffcdc7e85071e1d') in 0.0057493 seconds
+2025-11-20T23:03:30.822Z|0x36a8|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+2025-11-20T23:03:30.822Z|0x36a8|========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/UI/XBox Series/Default/xbox_button_color_x.png
+  artifactKey: Guid(4408c43ab84e4614db6f19251f94241f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T23:03:30.831Z|0x36a8|Start importing Assets/UI/XBox Series/Default/xbox_button_color_x.png using Guid(4408c43ab84e4614db6f19251f94241f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e60854e4c937298e90c249f9f1ce1aec') in 0.0054294 seconds
+2025-11-20T23:03:30.850Z|0x36a8|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+2025-11-20T23:03:31.322Z|0x36a8|========================================================================
+Received Import Request.
+  Time since last request: 0.471530 seconds.
+  path: Assets/UI/XBox Series/Default/controller_xboxseries.png
+  artifactKey: Guid(dcd493e43c6ff6c42b6c2728a9e52e23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T23:03:31.331Z|0x36a8|Start importing Assets/UI/XBox Series/Default/controller_xboxseries.png using Guid(dcd493e43c6ff6c42b6c2728a9e52e23) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b0b8f26c544534ca9d3ba1a31ace9d61') in 0.0069572 seconds
+2025-11-20T23:03:31.352Z|0x36a8|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+2025-11-20T23:03:31.352Z|0x36a8|========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/UI/XBox Series/Default/xbox_button_a.png
+  artifactKey: Guid(6a929c77625484f409811c2be131867b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T23:03:31.361Z|0x36a8|Start importing Assets/UI/XBox Series/Default/xbox_button_a.png using Guid(6a929c77625484f409811c2be131867b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '77f8c006364acd42a96565e0146ada13') in 0.0055687 seconds
+2025-11-20T23:03:31.381Z|0x36a8|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+2025-11-20T23:04:36.340Z|0x5644|Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+2025-11-20T23:04:36.457Z|0x36a8|AssetImportWorker is now disconnected from the server
+2025-11-20T23:04:36.457Z|0x36a8|Process exiting
+2025-11-20T23:04:36.457Z|0x36a8|Exiting without the bug reporter. Application will terminate with return code 0

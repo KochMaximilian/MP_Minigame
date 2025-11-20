@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class GameInput : MonoBehaviour {
     public event EventHandler OnInteractAction;
@@ -19,37 +18,39 @@ public class GameInput : MonoBehaviour {
 
         playerInputActions.Player.Interact.performed += OnInteractPerformed;
 
-        // Use named methods so we can unsubscribe in OnDisable
-        playerInputActions.Player.InteractAlternate.started += OnInteractAlternateStartedPerformed;
-        playerInputActions.Player.InteractAlternate.performed += OnInteractAlternatePerformedPerformed;
-        playerInputActions.Player.InteractAlternate.canceled += OnInteractAlternateCanceledPerformed;
+        // alternate phases
+        playerInputActions.Player.InteractAlternate.started += ctx => OnInteractAlternateStarted?.Invoke(this, EventArgs.Empty);
+        playerInputActions.Player.InteractAlternate.performed += ctx => OnInteractAlternatePerformed?.Invoke(this, EventArgs.Empty);
+        playerInputActions.Player.InteractAlternate.canceled += ctx => OnInteractAlternateCanceled?.Invoke(this, EventArgs.Empty);
     }
 
     private void OnDisable() {
-        if (playerInputActions == null) return;
-
         playerInputActions.Player.Interact.performed -= OnInteractPerformed;
-        playerInputActions.Player.InteractAlternate.started -= OnInteractAlternateStartedPerformed;
-        playerInputActions.Player.InteractAlternate.performed -= OnInteractAlternatePerformedPerformed;
-        playerInputActions.Player.InteractAlternate.canceled -= OnInteractAlternateCanceledPerformed;
+
+        // Unsubscribe: use explicit methods or disable whole action map (here we disable everything)
+        playerInputActions.Player.InteractAlternate.started -= ctx => OnInteractAlternateStarted?.Invoke(this, EventArgs.Empty);
+        playerInputActions.Player.InteractAlternate.performed -= ctx => OnInteractAlternatePerformed?.Invoke(this, EventArgs.Empty);
+        playerInputActions.Player.InteractAlternate.canceled -= ctx => OnInteractAlternateCanceled?.Invoke(this, EventArgs.Empty);
 
         playerInputActions.Player.Disable();
     }
 
-    private void OnInteractPerformed(InputAction.CallbackContext ctx) =>
+    private void OnInteractPerformed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
         OnInteractAction?.Invoke(this, EventArgs.Empty);
-
-    private void OnInteractAlternateStartedPerformed(InputAction.CallbackContext ctx) =>
-        OnInteractAlternateStarted?.Invoke(this, EventArgs.Empty);
-
-    private void OnInteractAlternatePerformedPerformed(InputAction.CallbackContext ctx) =>
-        OnInteractAlternatePerformed?.Invoke(this, EventArgs.Empty);
-
-    private void OnInteractAlternateCanceledPerformed(InputAction.CallbackContext ctx) =>
-        OnInteractAlternateCanceled?.Invoke(this, EventArgs.Empty);
+    }
 
     public Vector2 GetMovementVectorNormalized() {
         Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
-        return inputVector.sqrMagnitude > 0f ? inputVector.normalized : Vector2.zero;
+
+        // Dead zone to ignore controller drift
+        if (inputVector.magnitude < 0.2f) return Vector2.zero;
+
+        return inputVector.normalized;
+    }
+
+    // Return the raw stick/keyboard vector (not normalized). Used when you need to
+    // distinguish between zero / small analog input and intentional input.
+    public Vector2 GetMovementVector() {
+        return playerInputActions.Player.Move.ReadValue<Vector2>();
     }
 }

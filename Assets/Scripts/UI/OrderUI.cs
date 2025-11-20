@@ -10,7 +10,7 @@ public class OrderUI : MonoBehaviour
     }
 
     private void Start() {
-        DeliveryManager.Instance.OnRecipeSapwn += DeliveryManager_OnRecipeSapwn;
+        DeliveryManager.Instance.OnRecipeSpawn += DeliveryManager_OnRecipeSapwn;
         DeliveryManager.Instance.OnRecipeCompleted += DeliveryManager_OnRecipeCompleted;
 
         UpdateVisual();

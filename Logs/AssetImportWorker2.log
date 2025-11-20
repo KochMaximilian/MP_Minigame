@@ -1,0 +1,251 @@
+2025-11-20T22:39:31.275Z|0x146c|Using pre-set license
+2025-11-20T22:39:31.275Z|0x146c|Built from '6000.0/staging' branch; Version is '6000.0.38f1 (82314a941f2d) revision 8532298'; Using compiler version '193933523'; Build Type 'Release'
+2025-11-20T22:39:31.275Z|0x146c|OS: 'Windows 11  (10.0.26100) 64bit Professional' Language: 'en' Physical Memory: 65460 MB
+2025-11-20T22:39:31.275Z|0x146c|BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+2025-11-20T22:39:31.278Z|0x146c|
+COMMAND LINE ARGUMENTS:
+2025-11-20T22:39:31.278Z|0x146c|F:\Unity\6000.0.38f1\Editor\Unity.exe
+2025-11-20T22:39:31.278Z|0x146c|-adb2
+2025-11-20T22:39:31.278Z|0x146c|-batchMode
+2025-11-20T22:39:31.278Z|0x146c|-noUpm
+2025-11-20T22:39:31.278Z|0x146c|-name
+2025-11-20T22:39:31.278Z|0x146c|AssetImportWorker2
+2025-11-20T22:39:31.278Z|0x146c|-projectPath
+2025-11-20T22:39:31.278Z|0x146c|F:/Unity Projects Active/MP_Minigame
+2025-11-20T22:39:31.278Z|0x146c|-logFile
+2025-11-20T22:39:31.278Z|0x146c|Logs/AssetImportWorker2.log
+2025-11-20T22:39:31.278Z|0x146c|-srvPort
+2025-11-20T22:39:31.278Z|0x146c|54123
+2025-11-20T22:39:31.278Z|0x146c|-job-worker-count
+2025-11-20T22:39:31.278Z|0x146c|7
+2025-11-20T22:39:31.278Z|0x146c|-background-job-worker-count
+2025-11-20T22:39:31.278Z|0x146c|8
+2025-11-20T22:39:31.278Z|0x146c|-gc-helper-count
+2025-11-20T22:39:31.278Z|0x146c|1
+2025-11-20T22:39:31.278Z|0x146c|Successfully changed project path to: F:/Unity Projects Active/MP_Minigame
+2025-11-20T22:39:31.288Z|0x146c|F:/Unity Projects Active/MP_Minigame
+2025-11-20T22:39:31.288Z|0x146c|[UnityMemory] Configuration Parameters - Can be set up in boot.config
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-bucket-allocator-granularity=16"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-bucket-allocator-bucket-count=8"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-bucket-allocator-block-size=33554432"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-bucket-allocator-block-count=8"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-main-allocator-block-size=16777216"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-thread-allocator-block-size=16777216"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-gfx-main-allocator-block-size=16777216"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-gfx-thread-allocator-block-size=16777216"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-cache-allocator-block-size=4194304"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-typetree-allocator-block-size=2097152"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-profiler-bucket-allocator-granularity=16"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-profiler-bucket-allocator-block-count=8"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-profiler-allocator-block-size=16777216"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-profiler-editor-allocator-block-size=1048576"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-temp-allocator-size-main=16777216"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-job-temp-allocator-block-size=2097152"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-job-temp-allocator-block-size-background=1048576"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-allocator-temp-initial-block-size-main=262144"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-temp-allocator-size-background-worker=32768"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-temp-allocator-size-job-worker=262144"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-temp-allocator-size-preload-manager=33554432"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-temp-allocator-size-audio-worker=65536"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-temp-allocator-size-cloud-worker=32768"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+2025-11-20T22:39:31.288Z|0x146c|    "memorysetup-temp-allocator-size-gfx=262144"
+2025-11-20T22:39:31.293Z|0x146c|Player connection [5228]  Target information:
+
+2025-11-20T22:39:31.293Z|0x146c|Player connection [5228]  * "[IP] 192.168.1.14 [Port] 0 [Flags] 2 [Guid] 867958809 [EditorId] 867958809 [Version] 1048832 [Id] WindowsEditor(7,Jesus) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+2025-11-20T22:39:31.295Z|0x146c|Player connection [5228] Host joined multi-casting on [225.0.0.222:54997]...
+2025-11-20T22:39:31.295Z|0x146c|Player connection [5228] Host joined alternative multi-casting on [225.0.0.222:34997]...
+2025-11-20T22:39:31.295Z|0x146c|JobSystem: Creating JobQueue using job-worker-count value 7
+2025-11-20T22:39:31.316Z|0x146c|Input System module state changed to: Initialized.
+2025-11-20T22:39:31.344Z|0x146c|[Physics::Module] Initialized fallback backend.
+2025-11-20T22:39:31.344Z|0x146c|[Physics::Module] Id: 0xdecafbad
+2025-11-20T22:39:31.404Z|0x146c|Library Redirect Path: Library/
+2025-11-20T22:39:31.420Z|0x146c|[Physics::Module] Selected backend.
+2025-11-20T22:39:31.420Z|0x146c|[Physics::Module] Name: PhysX
+2025-11-20T22:39:31.420Z|0x146c|[Physics::Module] Id: 0xf2b8ea05
+2025-11-20T22:39:31.420Z|0x146c|[Physics::Module] SDK Version: 4.1.2
+2025-11-20T22:39:31.420Z|0x146c|[Physics::Module] Integration Version: 1.0.0
+2025-11-20T22:39:31.420Z|0x146c|[Physics::Module] Threading Mode: Multi-Threaded
+2025-11-20T22:39:31.432Z|0x146c|Refreshing native plugins compatible for Editor in 5.55 ms, found 6 plugins.
+2025-11-20T22:39:31.435Z|0x146c|Preloading 1 native plugins for Editor in 1.78 ms.
+2025-11-20T22:39:31.435Z|0x146c|Initialize engine version: 6000.0.38f1 (82314a941f2d)
+2025-11-20T22:39:31.435Z|0x146c|[Subsystems] Discovering subsystems at path F:/Unity/6000.0.38f1/Editor/Data/Resources/UnitySubsystems
+2025-11-20T22:39:31.435Z|0x146c|[Subsystems] Discovering subsystems at path F:/Unity Projects Active/MP_Minigame/Assets
+2025-11-20T22:39:31.435Z|0x146c|GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+2025-11-20T22:39:31.620Z|0x146c|Direct3D:
+2025-11-20T22:39:31.620Z|0x146c|    Version:  Direct3D 11.0 [level 11.1]
+2025-11-20T22:39:31.620Z|0x146c|    Renderer: NVIDIA GeForce RTX 4080 (ID=0x2704)
+2025-11-20T22:39:31.620Z|0x146c|    Vendor:   NVIDIA
+2025-11-20T22:39:31.620Z|0x146c|    VRAM:     16050 MB
+2025-11-20T22:39:31.620Z|0x146c|    Driver:   32.0.15.8180
+2025-11-20T22:39:31.814Z|0x146c|Initialize mono
+2025-11-20T22:39:31.814Z|0x146c|Mono path[0] = 'F:/Unity/6000.0.38f1/Editor/Data/Managed'
+2025-11-20T22:39:31.814Z|0x146c|Mono path[1] = 'F:/Unity/6000.0.38f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+2025-11-20T22:39:31.814Z|0x146c|Mono config path = 'F:/Unity/6000.0.38f1/Editor/Data/MonoBleedingEdge/etc'
+2025-11-20T22:39:31.814Z|0x146c|Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56452
+2025-11-20T22:39:31.876Z|0x146c|Begin MonoManager ReloadAssembly
+2025-11-20T22:39:32.201Z|0x146c|Registering precompiled unity dll's ...
+2025-11-20T22:39:32.202Z|0x146c|Register platform support module: F:/Unity/6000.0.38f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+2025-11-20T22:39:32.203Z|0x146c|Register platform support module: F:/Unity/6000.0.38f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+2025-11-20T22:39:32.204Z|0x146c|Registered in 0.002752 seconds.
+2025-11-20T22:39:32.906Z|0x146c|- Loaded All Assemblies, in  1.030 seconds
+2025-11-20T22:39:32.946Z|0x146c|Native extension for WindowsStandalone target not found
+2025-11-20T22:39:32.947Z|0x146c|Native extension for WebGL target not found
+2025-11-20T22:39:33.222Z|0x146c|Mono: successfully reloaded assembly
+2025-11-20T22:39:33.235Z|0x146c|- Finished resetting the current domain, in  0.329 seconds
+2025-11-20T22:39:33.236Z|0x146c|Domain Reload Profiling: 1359ms
+	BeginReloadAssembly (123ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (167ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (49ms)
+	LoadAllAssembliesAndSetupDomain (676ms)
+		LoadAssemblies (122ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (673ms)
+			TypeCache.Refresh (671ms)
+				TypeCache.ScanAssembly (660ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (330ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (282ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (28ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (49ms)
+			ProcessInitializeOnLoadAttributes (145ms)
+			ProcessInitializeOnLoadMethodAttributes (56ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+2025-11-20T22:39:33.403Z|0x146c|Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+========================================================================
+2025-11-20T22:39:33.464Z|0x146c|Worker process is ready to serve import requests
+2025-11-20T22:39:33.464Z|0x146c|Import Worker Mode flag is 0x00
+2025-11-20T22:39:33.535Z|0x146c|Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+2025-11-20T22:39:34.554Z|0x146c|- Loaded All Assemblies, in  0.894 seconds
+2025-11-20T22:39:34.693Z|0x146c|Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+2025-11-20T22:39:34.807Z|0x146c|'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+2025-11-20T22:39:34.853Z|0x146c|Refreshing native plugins compatible for Editor in 2.77 ms, found 6 plugins.
+2025-11-20T22:39:34.998Z|0x146c|Native extension for WindowsStandalone target not found
+2025-11-20T22:39:34.999Z|0x146c|Native extension for WebGL target not found
+2025-11-20T22:39:35.129Z|0x146c|Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Error saving file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path F:\Unity Projects Active\MP_Minigame\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <eb0ef51e5908461ca908fdf6b2dbd966>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <eb0ef51e5908461ca908fdf6b2dbd966>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
+  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding, System.Int32 bufferSize) [0x00055] in <eb0ef51e5908461ca908fdf6b2dbd966>:0 
+  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding) [0x00000] in <eb0ef51e5908461ca908fdf6b2dbd966>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamWriter..ctor(string,bool,System.Text.Encoding)
+  at System.IO.File.WriteAllText (System.String path, System.String contents, System.Text.Encoding encoding) [0x00034] in <eb0ef51e5908461ca908fdf6b2dbd966>:0 
+  at UnityEditor.StateCache`1[T].SetState (UnityEngine.Hash128 key, T obj) [0x0004b] in <c80d599bb30f4b0bbd7509f2fe905e9b>:0 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.StateCache`1<UnityEditor.Tools/LayerSettings>:SetState (UnityEngine.Hash128,UnityEditor.Tools/LayerSettings)
+UnityEditor.Tools:set_lockedLayers (int)
+UnityEditor.Tools:OnEnable ()
+UnityEngine.ScriptableObject:CreateScriptableObjectInstanceFromType (System.Type,bool)
+UnityEngine.ScriptableObject:CreateInstance (System.Type)
+UnityEngine.ScriptableObject:CreateInstance<UnityEditor.Tools> ()
+UnityEditor.Tools:get_get ()
+UnityEditor.Tools:get_visibleLayers ()
+UnityEditor.Animations.Rigging.BoneRendererUtils:.cctor () (at ./Library/PackageCache/com.unity.animation.rigging@68167b505d2b/Editor/Utils/BoneRendererUtils.cs:121)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: ./Library/PackageCache/com.unity.animation.rigging@68167b505d2b/Editor/Utils/BoneRendererUtils.cs Line: 121)
+
+2025-11-20T22:39:35.408Z|0x146c|[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-MP_Game
+Package Manager log level set to [2]
+2025-11-20T22:39:35.465Z|0x146c|[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+2025-11-20T22:39:35.466Z|0x146c|[Package Manager] Unable to send message (not connected to server process).
+2025-11-20T22:39:35.466Z|0x146c|[Package Manager] Cannot connect to Unity Package Manager local server
+2025-11-20T22:39:36.052Z|0x146c|Mono: successfully reloaded assembly
+2025-11-20T22:39:36.060Z|0x146c|- Finished resetting the current domain, in  1.203 seconds
+2025-11-20T22:39:36.061Z|0x146c|Domain Reload Profiling: 2096ms
+	BeginReloadAssembly (158ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (29ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (38ms)
+	LoadAllAssembliesAndSetupDomain (653ms)
+		LoadAssemblies (352ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (396ms)
+			TypeCache.Refresh (295ms)
+				TypeCache.ScanAssembly (227ms)
+			BuildScriptInfoCaches (85ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (1204ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1049ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (167ms)
+			ProcessInitializeOnLoadAttributes (603ms)
+			ProcessInitializeOnLoadMethodAttributes (271ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+2025-11-20T22:39:36.343Z|0x146c|Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+2025-11-20T22:39:36.820Z|0x146c|Refreshing native plugins compatible for Editor in 4.13 ms, found 6 plugins.
+2025-11-20T22:39:36.820Z|0x146c|Preloading 1 native plugins for Editor in 0.08 ms.
+2025-11-20T22:39:36.823Z|0x10d4|Unloading 312 Unused Serialized files (Serialized files now loaded: 0)
+2025-11-20T22:39:36.842Z|0x146c|Unloading 8797 unused Assets / (5.2 MB). Loaded Objects now: 9618.
+Memory consumption went from 217.2 MB to 211.9 MB.
+2025-11-20T22:39:36.842Z|0x146c|Total: 18.527000 ms (FindLiveObjects: 1.668500 ms CreateObjectMapping: 0.858000 ms MarkObjects: 12.294300 ms  DeleteObjects: 3.705500 ms)
+
+2025-11-20T22:40:22.939Z|0x146c|========================================================================
+Received Import Request.
+  Time since last request: 689281.456893 seconds.
+  path: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+  artifactKey: Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T22:40:22.950Z|0x146c|Start importing Assets/TextMesh Pro/Fonts/LiberationSans.ttf using Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8501a5aea98da5ca596f753fcecac1a5') in 0.4381019 seconds
+2025-11-20T22:40:23.408Z|0x146c|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+2025-11-20T22:40:23.409Z|0x146c|========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+  artifactKey: Guid(8f586378b4e144a9851e7b34d9b748ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+2025-11-20T22:40:23.422Z|0x146c|Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset using Guid(8f586378b4e144a9851e7b34d9b748ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8ca01270e2b166146b797b75f117ba68') in 0.0316835 seconds
+2025-11-20T22:40:23.469Z|0x146c|Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+2025-11-20T22:41:28.443Z|0x64c|Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+2025-11-20T22:41:28.581Z|0x146c|AssetImportWorker is now disconnected from the server
+2025-11-20T22:41:28.581Z|0x146c|Process exiting
+2025-11-20T22:41:28.581Z|0x146c|Exiting without the bug reporter. Application will terminate with return code 0

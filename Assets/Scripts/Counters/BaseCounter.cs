@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class BaseCounter : MonoBehaviour, IKitchenObjectParent {
 
+    public static event EventHandler OnPlayerDroppedObject;
+
     [SerializeField] private Transform objectSpawnPoint;
 
     private KitchenObject kitchenObject;
@@ -22,6 +24,10 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent {
 
     public void SetKitchenObject(KitchenObject kitchenObject) {
         this.kitchenObject = kitchenObject;
+
+        if (kitchenObject != null) {
+            OnPlayerDroppedObject?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     public KitchenObject GetKitchenObject() { return kitchenObject; }

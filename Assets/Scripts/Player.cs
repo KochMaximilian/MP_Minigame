@@ -7,6 +7,8 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
     public static Player Instance { get; private set; }
 
     public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
+    public event EventHandler OnPlayerPickUp;
+
     public class OnSelectedCounterChangedEventArgs : EventArgs {
         public BaseCounter selectedCounter;
     }
@@ -58,6 +60,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
         // sensible defaults if unset
         if (minInvokeInterval <= 0f) minInvokeInterval = 0.12f;
         if (interactAlternateRepeatDelay <= 0f) interactAlternateRepeatDelay = 0.12f;
+        if (interactAlternateInitialDelay <= 0f) interactAlternateInitialDelay = 0.35f;
     }
 
     private void OnEnable() {
@@ -82,12 +85,12 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
         invokedForThisPress = false;
 
         if (triggerImmediateOnStarted) {
-            // immediate-first mode: invoke now and start repeat coroutine with repeatDelay
+            // immediate-first mode: invoke now and start repeat coroutine after the initial delay
             TryInvokeInteractAlternate();
             invokedForThisPress = true;
 
-            // Start repeating: use repeatDelay so first gap == repeat gap
-            StartHoldRepeatCoroutine(interactAlternateRepeatDelay);
+            // Start repeating: wait interactAlternateInitialDelay before the first repeat
+            StartHoldRepeatCoroutine(interactAlternateInitialDelay);
         } else {
             // hold-first mode: do NOT start coroutine here.
             // Wait for 'performed' (Input System Hold) to invoke the first action,
@@ -101,12 +104,12 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
             TryInvokeInteractAlternate();
             invokedForThisPress = true;
 
-            // Start repeating after repeat delay so first gap == repeat gap
-            StartHoldRepeatCoroutine(interactAlternateRepeatDelay);
+            // Start repeating after the configured initial delay so first gap == initial delay
+            StartHoldRepeatCoroutine(interactAlternateInitialDelay);
         } else {
             // If we already invoked on started, ensure coroutine is running with correct timing
             if (interactAlternateCoroutine == null) {
-                StartHoldRepeatCoroutine(interactAlternateRepeatDelay);
+                StartHoldRepeatCoroutine(interactAlternateInitialDelay);
             }
         }
 
@@ -132,7 +135,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
     }
 
     private IEnumerator HoldRepeatCoroutine(float firstWait) {
-        // wait before first repeat (firstWait can be interactAlternateRepeatDelay or initialDelay)
+        // wait before first repeat (firstWait can be interactAlternateInitialDelay)
         if (firstWait > 0f) yield return new WaitForSeconds(firstWait);
 
         // loop while held
@@ -203,11 +206,8 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
             SetSelectedCounter(null);
         }
     }
-
     private void HandleMovement() {
-
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
-
         Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
 
         float moveDistance = movementSpeed * Time.deltaTime;
@@ -263,6 +263,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
         }
     }
 
+
     public bool IsWalking() {
         return isWalking;
     }
@@ -280,7 +281,12 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
     }
 
     public void SetKitchenObject(KitchenObject kitchenObject) {
+   
         this.kitchenObject = kitchenObject;
+
+        if (kitchenObject != null) {
+            OnPlayerPickUp?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     public KitchenObject GetKitchenObject() { return kitchenObject; }
